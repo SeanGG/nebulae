@@ -9,11 +9,11 @@ module.exports = {
         } else {
             this.pushURL(url)
         }
-        if (!window._za) {
-            this.setIlog()
-        } else {
-            window._za.pushData(url)
-        }
+        // if (!window._za) {
+        //     this.setIlog()
+        // } else {
+        //     window._za.pushData(url)
+        // }
     },
     setHmt: function() {
         var _hmt = _hmt || [];

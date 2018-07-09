@@ -1,5 +1,5 @@
 // 引入全局样式
-import 'zarm-vue/zarm-vue.default.css'
+// import 'zarm-vue/zarm-vue.default.css'
 import '@/assets/scss/common.scss'
 import 'babel-polyfill'
 import $ from 'jquery'
