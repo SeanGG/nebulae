@@ -1,0 +1,53 @@
+@import "_config.scss";
+@import "./config/mixins";
+/*common*/
+
+html,
+body {
+  background-color: $bgColor;
+  font-size: $fontSize;
+  line-height: 1.5;
+  font-family: $fontFamily;
+}
+
+body {
+  line-height: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+input,
+select,
+option,
+textarea {
+  // font-size: $fontSize;
+  resize: none;
+  border: 0;
+  padding: 0 0;
+  width: 100%;
+  background: #fff;
+}
+
+select {
+  // background-image: url("../imgs/productDetail/icon-arrow-down.png");
+  background-repeat: no-repeat;
+  background-size: rem(28) auto;
+  background-position: right center;
+}
+
+input[readonly] {
+  // background-color: #eee;
+}
+
+img {
+  display: block;
+}
+
+ul,li,dl,dt,ol {
+  list-style: none;
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@function rem($px, $base-font-size: 12px , $base-scale : 2) {
+  @if (unitless($px)) {
+   // @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  }
+  @else if (unit($px)==em) {
+    @return $px;
+  }
+  @return ($px / $base-font-size / $base-scale) * 1rem;
+}

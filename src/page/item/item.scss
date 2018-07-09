@@ -1,0 +1,390 @@
+$imgPath: '../../assets/images';
+body {
+  background: rgb(240, 240, 240);
+}
+
+.top {
+  width: 375px;
+  height: 210px;
+  img {
+    width: 100%;
+    vertical-align: top;
+    height: 210px;
+  }
+  video {
+    width: 100%;
+    height: 210px;
+    object-fit: fill;
+  }
+  .mask {
+    width: 100%;
+    height: 210px;
+    background: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    left: 0;
+    top: 0;
+    .playButton {
+      width: 30px;
+      height: 30px;
+      background: url(#{$imgPath}/app_experience//video_play.png) no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -15px;
+      margin-top: -15px;
+    }
+  }
+}
+
+/*
+      7.5rem === 750px
+  */
+
+.game_info {
+  height: 88px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
+  background: #fff;
+  img {
+    width: 54px;
+    height: 54px;
+  }
+  .text {
+    height: 54px;
+    width: 100px;
+    margin-left: 25px;
+    font-size: 15px;
+    color: #112036;
+    h4 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 10px;
+      color: #60666f;
+      line-height: 15px;
+    }
+  }
+}
+
+.wonderful {
+  width: 125px;
+  height: 54px;
+  .star {
+    width: 100%;
+    height: 24px;
+    font-size: 5px;
+    li {
+      width: 20%;
+      height: 100%;
+      background: url(#{$imgPath}/app_experience//star.png) no-repeat;
+      background-size: 70% 70%;
+      float: left;
+      &.active {
+        background: url(#{$imgPath}/app_experience//star_active.png) no-repeat;
+        background-size: 70% 70%;
+      }
+    }
+  }
+  .link {
+    display: block;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    color: #6195f2;
+    box-sizing: border-box;
+    border: 1px solid #6195f2;
+    border-radius: 5px;
+  }
+}
+
+.link.startup {
+  background: rgb(54, 153, 255);
+  color: #fff;
+}
+
+.main_content {
+  width: 100%;
+  overflow: hidden;
+  width: 100%;
+  overflow: hidden;
+  .header {
+    width: 100%;
+    height: 31.5px;
+    background: #fff;
+    display: flex;
+    box-sizing: border-box;
+    li {
+      float: left;
+      flex: 1;
+      font-size: 15px;
+      text-align: center;
+      line-height: 29px;
+      a {
+        display: inline-block;
+        color: #112036;
+      }
+      &.active a {
+        color: #6195f2;
+        border-bottom: 3px solid #6195f2;
+      }
+    }
+  }
+  .container .item {
+    background: #fff;
+    &.show {
+      display: block;
+    }
+  }
+}
+
+.container .item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.pic_scroll {
+  margin: 0 20px;
+  .cc {
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0;
+  }
+  img {
+    display: inline-block;
+    width: 140px;
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+}
+
+.component {
+  background: #fff;
+  margin-left: 22.5;
+  margin-right: 20px;
+  h4 {
+    color: #112036;
+    font-size: 15px;
+    margin: 10px 0;
+    i {
+      width: 16.5px;
+      height: 16.5px;
+      &.shouqi {
+        background: url(#{$imgPath}/app_experience//shouqi.png) no-repeat;
+        background-size: 100%;
+      }
+      &.cute {
+        display: none;
+      }
+      &.zhankai {
+        background: url(#{$imgPath}/app_experience//zhankai.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+  p {
+    margin: 5px 0;
+    font-size: 12px;
+    line-height: 20px;
+    &.short {
+      // margin: 5px 0;
+      // font-size: 12px;
+      // line-height: 20px;
+      height: 60px;
+      overflow: hidden;
+    }
+    &.long,
+    &.cute {
+      height:auto;
+      // margin: 5px 0;
+    }
+  }
+}
+
+.line {
+  height: 5px;
+  background: rgb(240, 240, 240);
+}
+
+.task_content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(240, 240, 240);
+}
+
+.item.task_single {
+  padding-bottom: 0;
+}
+
+.task_single .task_item {
+  width: 145px;
+  height: 149px;
+  background: url(#{$imgPath}/app_experience//task_bg.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 15px 0;
+  margin-left: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.task_item {
+  h5 {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #112036;
+  }
+  img.icon {
+    width: 87.5px;
+    height: 69px;
+  }
+  .information {
+    width: 145px;
+    height: 45px;
+    p {
+      font-size: 12px;
+      color: #39424f;
+      text-align: left;
+      margin-left: 15px;
+      line-height: 20px;
+    }
+    span {
+      float: right;
+      margin-right: 15px;
+      color: #f38c13;
+    }
+  }
+  .completed {
+    position: absolute;
+    width: 79.5px;
+    right: 0;
+    top: 130px;
+  }
+}
+
+.cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 1000;
+  display: block;
+}
+
+.cover_prompt,
+.cover_alert {
+  display: none;
+}
+
+.cover .content {
+  width: 265px;
+  height: 248px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -132.5px;
+  margin-top: -124px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.cover_prompt .content {
+  .text {
+    width: 100%;
+    height: 175px;
+    .info {
+      font-size: 15px;
+      line-height: 20px;
+      color: #000;
+    }
+    .tips {
+      margin-top: 30px;
+      color: rgb(238, 110, 81);
+      p {
+        font-size: 12.5px;
+        line-height: 20px;
+      }
+    }
+  }
+  .button {
+    width: 100%;
+    height: 30.5px;
+    .btn {
+      width: 92.5px;
+      height: 30.5px;
+      font-size: 15px;
+      color: #fff;
+      text-align: center;
+      line-height: 30.5px;
+    }
+    .btn-cancel {
+      float: left;
+      background: url(#{$imgPath}/app_experience//btn_cancel.png) no-repeat;
+      background-size: 100%;
+      margin-left: 15px;
+    }
+    .btn-submit {
+      float: right;
+      background: url(#{$imgPath}/app_experience//btn_submit.png) no-repeat;
+      background-size: 100%;
+      margin-right: 15px;
+    }
+  }
+}
+
+.cover_alert .content {
+  height: 175px;
+  margin-top: -87.5px;
+  .text {
+    width: 100%;
+    height: 215px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000;
+  }
+  .btn {
+    width: 92.5px;
+    height: 30.5px;
+    background: url(#{$imgPath}/app_experience//btn_submit.png) no-repeat;
+    background-size: 100%;
+    line-height: 30.5px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bottom_btn {
+  display: none;
+}

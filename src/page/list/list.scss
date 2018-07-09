@@ -1,0 +1,115 @@
+$imgPath: '../../assets/images';
+body {
+  background: #f0f0f0;
+}
+
+.topPic {
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+  .info {
+    width: 100%; // height: 2rem;
+    background: #181920;
+    box-sizing: border-box;
+    padding-left: 9px;
+    padding-right: 18px;
+    padding-top: 10px;
+  }
+  .game {
+    overflow: hidden;
+    img {
+      width: 54px;
+      height: 54px;
+    }
+    .des {
+      color: #fff;
+      height: 40px;
+      margin-top: 5px;
+      font-size: 16px;
+      margin-left: 10px;
+      line-height: 40px;
+      width: 100px;
+      overflow: hidden;
+      p {
+        font-size: 9px;
+      }
+    }
+  }
+  .task {
+    width: 171px;
+    height: 56.5px;
+    background: url(#{$imgPath}/app_experience/single_task.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    p {
+      font-size: 12px; // position: absolute;
+      margin-left: 60px;
+      color: #fff;
+    }
+    .top {
+      margin-top: 9px;
+    }
+    .bottom {
+      // top: 30px;
+      color: #df6936;
+    }
+  }
+}
+
+.game_description {
+  width: 100%;
+  height: 30px;
+  margin-top: 2.5px;
+  border-top: 1px solid rgb(39, 41, 50);
+  color: #fff;
+  font-size: 12px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list {
+  overflow: hidden;
+  margin-top: 17px;
+  padding-top: 15px;
+  background: #fff;
+  h3 {
+    font-size: 15px;
+    color: #000;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  ul li {
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
+    .content {
+      box-sizing: border-box;
+      line-height: 17.5px;
+      padding-left: 15px;
+      h4 {
+        color: #000;
+        font-size: 15px;
+        margin: 10px 0;
+      }
+      .info {
+        color: rgb(105, 105, 105);
+        height: 25px;
+        font-size: 15px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.empty-list {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #ddd;
+}
