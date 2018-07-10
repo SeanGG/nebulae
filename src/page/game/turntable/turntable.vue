@@ -41,6 +41,10 @@ export default {
       url: '',
       testName: '',
 
+      header: {
+        name: '九宫格转盘',
+        desc: '九宫格转盘抽奖'
+      },
       turntableList: 9,  // 九宫格转盘
       currentIndex: '',  // 选中的格子
       turntableTime1: '',  // 轮盘时间
@@ -59,6 +63,7 @@ export default {
     }
   },
   created () {
+    this.$parent.header = this.header
     // this.handleChange()
     // this.setInitParams()
     // this.getData()

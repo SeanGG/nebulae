@@ -1,9 +1,5 @@
 <template>
   <div class="content">
-    <header>
-      <section class="title">首页</section>
-      <section class="description">应用&功能入口集合</section>
-    </header>
     <main>
       <section class="alert">当前环境：
         <span class="agent">{{userAgent}}</span>
@@ -31,6 +27,10 @@ export default {
   name: 'AppAPi',
   data () {
     return {
+      header: {
+        name: '首页',
+        desc: '应用&功能入口集合'
+      },
       userAgent: '当前环境计算中...',
       apiList: [
         {
@@ -64,6 +64,7 @@ export default {
   computed: {},
   created () {
     this.testAgent();
+    this.$parent.header = this.header
   },
   methods: {
     testAgent () {

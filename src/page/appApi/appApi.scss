@@ -12,27 +12,8 @@ body {
   .title {}
 }
 
-header {
-  margin: 15px 35px;
-  background: url(#{$imgPath}/app_experience/login.png);
-  background-size: auto 100%;
-  background-position: right center;
-  background-repeat: no-repeat;
-  section {
-    // margin: 20px 20px 0;
-  }
-  .title {
-    font-size: 30px;
-    color: #000;
-  }
-  .description {
-    font-size: 14px; // margin: 5px 20px 20px;
-    margin: 10px 0 0;
-  }
-}
-
 main {
-  margin: 15px;
+  margin:0 15px 15px;
   background-color: #fff;
   font-size: 16px;
   overflow: hidden;

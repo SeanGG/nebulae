@@ -1,5 +1,9 @@
 <template>
   <div id='app'>
+    <header ref="header">
+      <section class="title">{{header.name}}</section>
+      <section class="description">{{header.desc}}</section>
+    </header>
     <router-view></router-view>
   </div>
 </template>
@@ -11,7 +15,11 @@ export default {
   name: 'app',
   data() {
     return {
-      autoTest: getQueryString('autoTest')
+      autoTest: getQueryString('autoTest'),
+      header:{
+        name:'首页',
+        desc:'应用&功能入口集合'
+      }
     }
   },
   created() {

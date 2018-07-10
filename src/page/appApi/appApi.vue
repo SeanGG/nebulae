@@ -1,9 +1,5 @@
 <template>
   <div class="content">
-    <header>
-      <section class="title">appApi列表</section>
-      <section class="description">app提供原生功能接口</section>
-    </header>
     <main>
       <section class="alert">当前环境：
         <span class="agent">{{userAgent}}</span>
@@ -31,6 +27,10 @@ export default {
   name: 'AppAPi',
   data () {
     return {
+      header: {
+        name: 'appApi列表',
+        desc: 'app提供原生功能接口'
+      },
       userAgent: '当前环境计算中...',
       apiList: [
         {
@@ -104,6 +104,7 @@ export default {
   computed: {},
   created () {
     this.testAgent();
+    this.$parent.header = this.header
   },
   methods: {
     testAgent () {
