@@ -1,7 +1,8 @@
 let _ua = window.navigator.userAgent
 
 export const isApp = () => {
-  return /zhonganwebview/i.test(_ua)
+  // return /zhonganwebview/i.test(_ua)
+  return true
 }
 
 export const isWeixin = () => {
