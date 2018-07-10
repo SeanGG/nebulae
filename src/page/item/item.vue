@@ -181,7 +181,7 @@ export default {
           download_url: 'https://wwww.baidu.com',
           tryOpenUrl: 'https://wwww.baidu.com',
           name: 'test',
-          icon_url: '/static/img/big_bg.d19eb01.png',
+          // icon_url: '/static/img/big_bg.d19eb01.png',
           type: 1,
           id: 'id'
         },
@@ -192,7 +192,7 @@ export default {
           download_url: 'https://wwww.baidu.com',
           tryOpenUrl: 'https://wwww.baidu.com',
           name: 'test',
-          icon_url: '/static/img/big_bg.d19eb01.png',
+          // icon_url: '../../assets/images/app_experience/big_bg.png',
           type: 1,
           id: 'id'
         }

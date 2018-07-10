@@ -12,7 +12,7 @@
     {{testName}}
     <div class="topPic">
       <div @click="linkTo" class="top_link">
-        <img src="@/assets/images/app_experience/big_bg.png">
+        <!-- <img src="../assets/images/app_experience/big_bg.png"> -->
       </div>
       <div class="info clearfix">
         <div class="game fl">
