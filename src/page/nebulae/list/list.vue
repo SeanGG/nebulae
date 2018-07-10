@@ -102,7 +102,7 @@ export default {
     setInitParams () {
       const query = this.$route.query
       this.url = setInitParams(query).url
-      this.page_sessionid = setInitParams(query).page_sessionid
+      this.page_sessionid = setInitParams(query).page_sessionid || 'orruogbi43f8950usjjcoe928k'
       this.page_udid = setInitParams(query).page_udid
     },
     getData () {

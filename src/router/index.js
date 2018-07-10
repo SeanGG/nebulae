@@ -11,7 +11,16 @@ export default new Router({
     // 默认加载页面
     {
       path: '/',
-      redirect: '/AppApi'
+      redirect: '/Index'
+    },
+    // 首页
+    {
+      path: '/Index',
+      name: 'Index',
+      component: r => require.ensure([], () => r(require('@/page/index/index.js')), 'index'),
+      meta: {
+        title: '转盘'
+      }
     },
     // app原生接口
     {
@@ -26,39 +35,12 @@ export default new Router({
     {
       path: '/Turntable',
       name: 'Turntable',
-      component: r => require.ensure([], () => r(require('@/page/turntable/index.js')), 'turntable'),
+      component: r => require.ensure([], () => r(require('@/page/game/turntable/index.js')), 'turntable'),
       meta: {
         title: '转盘'
       }
     },
-    // 星云应用-游戏列表
-    {
-      path: '/list',
-      name: 'List',
-      component: r => require.ensure([], () => r(require('@/page/list/index.js')), 'list'),
-      meta: {
-        title: '星云应用-游戏列表'
-      }
-    },
-    // 星云应用-游戏详情
-    {
-      path: '/item',
-      name: 'Item',
-      component: r => require.ensure([], () => r(require('@/page/item/index.js')), 'item'),
-      meta: {
-        title: '星云应用-游戏详情'
-      }
-    },
-    // 星云应用-游戏详情
-    {
-      path: '/getInviteCode',
-      name: 'GetInviteCode',
-      component: r => require.ensure([], () => r(require('@/page/getInviteCode/index.js')), 'getInviteCode'),
-      meta: {
-        title: '星云应用-邀请'
-      }
-    },
-    // 星云应用-404
+    // 404
     {
       path: '/404',
       name: '404',
@@ -67,10 +49,37 @@ export default new Router({
         title: '星云应用-404'
       }
     },
-    // 星云应用-未知页面重定向
+    // 未知页面重定向
     {
       path: '*',
       redirect: '/404'
+    },
+    // 星云应用-游戏列表
+    {
+      path: '/NaList',
+      name: 'NaList',
+      component: r => require.ensure([], () => r(require('@/page/nebulae/list/index.js')), 'naList'),
+      meta: {
+        title: '星云应用-游戏列表'
+      }
+    },
+    // 星云应用-游戏详情
+    {
+      path: '/NaItem',
+      name: 'NaItem',
+      component: r => require.ensure([], () => r(require('@/page/nebulae/item/index.js')), 'naItem'),
+      meta: {
+        title: '星云应用-游戏详情'
+      }
+    },
+    // 星云应用-游戏详情
+    {
+      path: '/NaGetInviteCode',
+      name: 'NaGetInviteCode',
+      component: r => require.ensure([], () => r(require('@/page/nebulae/getInviteCode/index.js')), 'naGetInviteCode'),
+      meta: {
+        title: '星云应用-邀请'
+      }
     }
   ],
   scrollBehavior(to, from, savedPosition) {
