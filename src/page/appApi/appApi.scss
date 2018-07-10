@@ -78,12 +78,31 @@ main {
       background-color: #eee;
       position: relative;
       font-size: 14px;
-      line-height:20px;
+      line-height: 20px;
       &:before {
         content: "功能：";
         position: absolute;
-        left:10px;
-        top:10px;
+        left: 10px;
+        top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    .api-list {
+      li {
+        width: 33%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    .api-list {
+      li {
+        width: 25%;
       }
     }
   }
