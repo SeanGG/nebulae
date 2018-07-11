@@ -1,11 +1,23 @@
-$imgPath: '../../assets/images';
+$imgPath: '../../../assets/images';
 .turntable-content {
-  .turntable-grid {
+  .turntable-main {
     width: 30rem;
-    height: 30rem;
-    border: .1rem solid #000;
+    height: 30rem; // border: .1rem solid #999;
     margin: 0 auto;
     position: relative;
+    .turntable-shadow {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: .5;
+      background-color: #eee;
+    }
+  }
+  .turntable-grid {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     box-sizing: border-box;
     .turntable-cell {
@@ -19,59 +31,136 @@ $imgPath: '../../assets/images';
         background: #f60;
       }
       &:nth-of-type(1) {
-        left: 0;
-        top: 0;
+        left: -.1rem;
+        top: -.1rem;
       }
       &:nth-of-type(2) {
-        left: 10rem;
-        top: 0;
+        left: 9.9rem;
+        top: -.1rem;
       }
       &:nth-of-type(3) {
-        left: 20rem;
-        top: 0;
+        left: 19.9rem;
+        top: -.1rem;
       }
       &:nth-of-type(8) {
-        left: 0;
-        top: 10rem;
+        left: -.1rem;
+        top: 9.9rem;
       }
       &:nth-of-type(9) {
-        left: 10rem;
-        top: 10rem;
+        left: 9.9rem;
+        top: 9.9rem;
       }
       &:nth-of-type(4) {
-        left: 20rem;
-        top: 10rem;
+        left: 19.9rem;
+        top: 9.9rem;
       }
       &:nth-of-type(7) {
-        left: 0;
-        top: 20rem;
+        left: -.1rem;
+        top: 19.9rem;
       }
       &:nth-of-type(6) {
-        left: 10rem;
-        top: 20rem;
+        left: 9.9rem;
+        top: 19.9rem;
       }
       &:nth-of-type(5) {
-        left: 20rem;
-        top: 20rem;
+        left: 19.9rem;
+        top: 19.9rem;
       }
     }
-    .btn {
-      width:100%;
-      height:100%;
-      background-color: #999;
+    .gift-cell {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      height: calc(100% - 20px);
+      .gift-name {
+        flex: 0;
+        height: 2rem;
+        line-height: 2rem;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .gift-img {
+        flex: 1;
+        background-image: url(#{$imgPath}/app_experience/single_task.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto; // height:8rem;
+      }
+    }
+    .btn-cell {
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .btn {
+        flex: 0;
+        height: 3rem;
+        line-height: 3rem;
+        margin: 5px 10px;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #12c287;
+        color: #fff;
+      }
     }
   }
   .turntable-form {
-    width:30rem;
-    margin:0 auto;
+    width: 300px;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 10px;
     .turntable-line {
       display: flex;
+      margin: 10px 0;
+      font-size: 14px;
       .turntable-label {
-        flex:none;
-        width:13rem;
+        flex: none;
+        width: 140px;
+        &.btn {
+          background-color: #12c287;
+          border-radius: 4px;
+          width: 100%;
+          padding: 5px;
+          text-align: center;
+          color: #fff;
+        }
       }
       .turntable-center {
-        flex:1;
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
+  .gift-room {
+    position: fixed;
+    left: 5%;
+    bottom: 10px;
+    width: 90%;
+    background-color: #fff;
+    text-align: center;
+    border: 1px dashed #666;
+    .title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .grid {
+      display: flex;
+      text-align: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+      justify-content: center;
+      .gift-cell {
+        flex: none;
+        width: 33%;
+        border: 1px solid #eee;
+        img {
+          max-height: 30px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
       }
     }
   }
