@@ -8,7 +8,7 @@ Vue.http.options.emulateHTTP = true
 
 /**
  * initLoad
- * @authors zhanwang.ye
+ * @authors zhangxiang
  * @param  {...[type]} requests [description]
  * @return {[type]}             [description]
  */
@@ -44,23 +44,23 @@ export const initLoad = requests => {
 
 /**
  * get request
- * @authors zhanwang.ye
+ * @authors zhangxiang
  * @param  {[type]} url   [description]
  * @param  {[type]} query [description]
  * @return {[type]}       [description]
  */
 export const get = (opts) => {
-  let $http = Vue.http
+  const $http = Vue.http
 
-  let url = opts.url
-  let query = opts.data
+  const url = opts.url
+  const query = opts.data
 
   return $http
     .get(config.callApi ? `${config.host}` + url : `${config.mockHost}` + url, {
       params: query
     })
     .then(response => {
-      let res = response.data
+      const res = response.data
       return Promise.resolve(res)
     })
     .catch(err => {
@@ -72,20 +72,24 @@ export const get = (opts) => {
 
 /**
  * post request
- * @authors zhanwang.ye
+ * @authors zhangxiang
  * @param  {[type]} url   [description]
  * @param  {[type]} query [description]
  * @return {[type]}       [description]
  */
 export const post = (opts) => {
-  let $http = Vue.http
+  const $http = Vue.http
 
-  let url = opts.url
-  let data = opts.data
+  const url = opts.url
+  const data = opts.data
+  if (opts.emulateJSON) {
+    $http.options.emulateJSON = opts.emulateJSON
+  }
+  $http.headers['post'] = Object.assign({}, $http.headers['post'], opts.headers)
   return $http
     .post(config.callApi ? `${config.host}` + url : `${config.mockHost}` + url, data)
     .then(response => {
-      let res = response.data
+      const res = response.data
       return Promise.resolve(res)
     })
     .catch(err => {
@@ -97,17 +101,31 @@ export const post = (opts) => {
 
 /**
  * jsonp request
- * @authors zhanwang.ye
+ * @authors zhangxiang
  * @param  {[type]} url   [description]
  * @param  {[type]} query [description]
  * @return {[type]}       [description]
  */
-export const getJsonp = (url, query) => {
-  let $http = Vue.http
+export const getJsonp = (opts) => {
+  const $http = Vue.http
+
+  const url = opts.url
+  const data = opts.data
+  const session = data.session || ''
+  const cb = 'jsonp_' + session.slice(0,8)
+
+  if (opts.emulateJSON) {
+    $http.options.emulateJSON = opts.emulateJSON
+  }
   return $http
-    .jsonp(config.callApi ? `${config.host}` + url : `${config.mockHost}` + url, query)
+    .jsonp(
+      config.callApi ? `${config.host}` + url : `${config.mockHost}` + url, {
+        params: data, // 请求参数
+        jsonp: 'callback',
+        jsonpCallback: cb
+      })
     .then(response => {
-      let res = response.data
+      const res = response.data
       return Promise.resolve(res)
     })
     .catch(err => {
@@ -122,7 +140,12 @@ export const getJsonp = (url, query) => {
  * @param string method  请求方式, POST, GET ...
  * @param object params  请求数据
  */
-export const formSubmit = ({ url, method, params, target }) => {
+export const formSubmit = ({
+  url,
+  method,
+  params,
+  target
+}) => {
   const hasOwn = {}.hasOwnProperty
 
   if (typeof window === 'undefined') {
@@ -152,7 +175,7 @@ export const formSubmit = ({ url, method, params, target }) => {
   form.appendChild(submitBtnField)
 
   document.body.appendChild(form)
-  submitBtnField.onclick = function(ev) {
+  submitBtnField.onclick = function (ev) {
     form.submit()
   }
   submitBtnField.click()

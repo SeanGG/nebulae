@@ -435,7 +435,7 @@ var DateUtil = {
     },
     /**
      * 比较日期大小
-     * @authors zhanwang.ye
+     * @authors zhangxiang
      * @param  {[type]} date1 [description]
      * @param  {[type]} date2 [description]
      * @return {[type]}       [description]

@@ -1,0 +1,62 @@
+$imgPath: '../../assets/images';
+main {
+  padding: 0;
+  .prdList-main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eee;
+    .prdList-block {
+      flex: none;
+      width: 50%;
+      .prdList-cell {
+        margin: 10px 5px 10px 10px;
+        background-color: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      &:nth-of-type(2n) {
+        .prdList-cell {
+          margin: 10px 10px 10px 5px;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
+      .prdList-img {
+        height: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .prdList-info {
+        margin:10px;
+        line-height: 1.5;
+      }
+      .prdList-name {
+        font-size: 16px;
+      }
+      .prdList-desc {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .prdList-count {
+        font-size: 12px;
+        line-height: 16px;
+        vertical-align: bottom;
+      }
+      .prdList-price {
+        font-size: 14px;
+        color:#12c287;
+        line-height: 16px;
+        vertical-align: bottom;
+      }
+      .prdList-video {}
+    }
+  }
+}
+
+// pad
+@media screen and (min-width: 800px) {}
+
+// pc
+@media screen and (min-width: 1200px) {}

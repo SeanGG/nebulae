@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <section class="content">
     <main>
       <section class="alert">当前环境：
         <span class="agent">{{userAgent}}</span>
@@ -17,8 +17,10 @@
         </ul>
       </section>
     </main>
-  </div>
+  </section>
 </template>
+
+<style lang="scss" scoped src="./index.scss"></style>
 
 <script>
 import { appBridge } from '@/utils/appBridge'
@@ -40,6 +42,11 @@ export default {
               name: '九宫格',
               key: 'Turntable',
               desc: '1代九宫格抽奖'
+            },
+            {
+              name: '盒子',
+              key: 'BoxIndex',
+              desc: '盒子页面'
             },
             {
               name: '星云',

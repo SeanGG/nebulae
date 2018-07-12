@@ -20,6 +20,8 @@
   </div>
 </template>
 
+<style lang="scss" scoped src="./appApi.scss"></style>
+
 <script>
 import { appBridge } from '@/utils/appBridge'
 import { isApp, isWeixin } from '@/utils/platform'

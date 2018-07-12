@@ -4,6 +4,8 @@
   </div>
 </template>
 
+<style lang="scss" scoped src="./404.scss"></style>
+
 <script>
 import * as http from '@/utils/http'
 import * as api from '@/api/'

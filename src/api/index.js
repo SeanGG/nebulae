@@ -9,12 +9,20 @@
  * DEL：删除
  * @type {String}
  */
+
+const apiConfig = require('../../config')
+// console.log(apiConfig.dev.proxyTable['/ngc'].target)
+const prdApi = apiConfig.dev.proxyTable['/ngc'].target
+const testApi = apiConfig.dev.proxyTable['/test'].target
+console.log(testApi)
+
 const env = process.env.NODE_ENV
 console.log('config=' + env)
-let devApi = '/mock' // 模拟地址 /mock
-const api = env === 'production' ? '' : devApi
+let devApi = '/test' // 模拟地址 /mock /test /ngc
+const api = env === 'production' ? testApi : devApi
 const configs = {
   API_DAtestTA_getPrem: `${api}/promote/standard/getPrem.json`,
-  test1: `${api}/test1.json`
+  test1: `${api}/test1.json`,
+  goodsList: `${api}/goods/list`
 }
 module.exports = configs

@@ -37,6 +37,14 @@ module.exports = {
         }
       },
       // 测试地址
+      '/test': {
+        target: 'http://122.11.58.232:8003',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/test': ''
+        }
+      },
+      // 生产地址
       '/ngc': {
         target: 'https://ngc.ztgame.com/',
         changeOrigin: true,

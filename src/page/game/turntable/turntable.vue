@@ -80,6 +80,8 @@
   </section>
 </template>
 
+<style lang="scss" scoped src="./turntable.scss"></style>
+
 <script>
 import giftImg1 from '@/assets/images/app_experience/big_bg.png'
 import giftImg2 from '@/assets/images/app_experience/list_item.png'
