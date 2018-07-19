@@ -19,7 +19,7 @@ export default {
       header: {
         name: '首页',
         desc: '应用&功能入口集合',
-        status: true
+        status: false
       }
     }
   },
