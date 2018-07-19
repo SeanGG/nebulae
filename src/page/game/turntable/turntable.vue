@@ -88,7 +88,7 @@ import giftImg2 from '@/assets/images/app_experience/list_item.png'
 
 import * as http from '@/utils/http'
 import * as api from '@/api/'
-import { setInitParams } from '@/utils/util'
+import { setInitParams, setHeaderView } from '@/utils/util'
 
 export default {
   name: 'Turntable',
@@ -179,7 +179,7 @@ export default {
     }
   },
   created () {
-    this.$parent.header = this.header
+    setHeaderView(this)
   },
   methods: {
     // 开始游戏

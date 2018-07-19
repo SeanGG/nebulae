@@ -1,0 +1,45 @@
+$imgPath: '../../../assets/images';
+main {
+  margin: 0;
+  padding: 0;
+  .msg-content {
+    background-image: url(#{$imgPath}/box/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 40px 40px;
+    color: #fff; // overflow: hidden;
+    .title {
+      font-size: 56px;
+      text-align: center;
+      line-height: 1;
+      padding: 40px 0;
+    }
+    .desc {
+      font-size: 28px;
+      text-align: left;
+      text-indent: 2em;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    .api-list {
+      li {
+        width: 33%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    .api-list {
+      li {
+        width: 25%;
+      }
+    }
+  }
+}

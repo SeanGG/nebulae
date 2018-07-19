@@ -9,45 +9,55 @@ main {
       flex: none;
       width: 50%;
       .prdList-cell {
-        margin: 10px 5px 10px 10px;
+        margin: 0 20px 20px 20px;
         background-color: #fff;
-        border-radius: 4px;
+        border-radius: 8px;
         overflow: hidden;
       }
       &:nth-of-type(2n) {
         .prdList-cell {
-          margin: 10px 10px 10px 5px;
+          margin: 0 20px 20px 5px;
+        }
+      }
+      &:nth-of-type(1) {
+        .prdList-cell {
+          margin-top: 20px;
+        }
+      }
+      &:nth-of-type(2) {
+        .prdList-cell {
+          margin-top: 20px;
         }
       }
       img {
         max-width: 100%;
       }
       .prdList-img {
-        height: 100px;
+        height: 200px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
       }
       .prdList-info {
-        margin:10px;
-        line-height: 1.5;
+        margin: 20px;
+        line-height: 1.2;
       }
       .prdList-name {
-        font-size: 16px;
+        font-size: 32px;
       }
       .prdList-desc {
-        font-size: 12px;
+        font-size: 24px;
         line-height: 1.5;
       }
       .prdList-count {
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 24px;
+        line-height: 32px;
         vertical-align: bottom;
       }
       .prdList-price {
         font-size: 14px;
-        color:#12c287;
-        line-height: 16px;
+        color: #12c287;
+        line-height: 32px;
         vertical-align: bottom;
       }
       .prdList-video {}

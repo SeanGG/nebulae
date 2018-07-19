@@ -3,20 +3,22 @@
     <main>
       <!-- 商品列表 -->
       <section class="prdList-main">
-        <section class="prdList-block" :key="index" v-for="(item, index) in prdList" v-if="prdList.length >= 1">
-          <section class="prdList-cell" @click="goPage" :data-source='JSON.stringify(item)'>
-            <section class="prdList-img" v-if="item.img" :style="'background-image:url(' + item.img + ')'"></section>
-            <section class="prdList-video" v-if="item.video">{{item.video}}</section>
-            <section class="prdList-info">
-              <section class="prdList-name">{{item.name}}</section>
-              <section class="prdList-desc">{{item.desc}}</section>
-              <section class="clearfix">
-                <section class="prdList-count fl">剩余数量：{{item.count}}</section>
-                <section class="prdList-price fr">售价：{{item.price}}</section>
+        <template v-if="prdList.length >= 1">
+          <section class="prdList-block" :key="index" v-for="(item, index) in prdList">
+            <section class="prdList-cell" @click="goPage" :data-source='JSON.stringify(item)'>
+              <section class="prdList-img" v-if="item.img" :style="'background-image:url(' + item.img + ')'"></section>
+              <section class="prdList-video" v-if="item.video">{{item.video}}</section>
+              <section class="prdList-info">
+                <section class="prdList-name">{{item.name}}</section>
+                <section class="prdList-desc">{{item.desc}}</section>
+                <section class="clearfix">
+                  <section class="prdList-count fl">剩余数量：{{item.count}}</section>
+                  <section class="prdList-price fr">售价：{{item.price}}</section>
+                </section>
               </section>
             </section>
           </section>
-        </section>
+        </template>
         <section v-else>
           暂无商品
         </section>
@@ -33,7 +35,7 @@ import giftImg2 from '@/assets/images/app_experience/list_item.png'
 
 import * as http from '@/utils/http'
 import * as api from '@/api/'
-// import { setInitParams } from '@/utils/util'
+import { setHeaderView } from '@/utils/util'
 
 export default {
   name: 'PrdList',
@@ -68,13 +70,13 @@ export default {
   computed: {
   },
   created () {
-    this.$parent.header = this.header
+    setHeaderView(this)
 
     this.getList()
   },
   methods: {
     goPage (e) {
-      const source = e.currentTarget.dataset.source;
+      const source = e.currentTarget.dataset.source
       const gameId = JSON.parse(source).game_id
       console.log(gameId)
       this.$router.push({
@@ -89,50 +91,35 @@ export default {
         url: api.goodsList,
         data: {
           game_id: '10000',
-          session: 'f6de91a8b790fff28714c',
+          session: 'f6de91a8b790fff28714c'
         },
-        emulateJSON: true,
+        emulateJSON: true
       }).then(res => {
-        if (res.state.code == 0) {
+        if (res.state.code === 0) {
           let prdList = res.data
-          prdList.forEach( (item) => {
-            if(!item.img){
+          prdList.forEach((item) => {
+            if (!item.img) {
               item.img = giftImg2
             }
-            if(!item.count){
+            if (!item.count) {
               item.count = '10'
             }
-            
           })
           this.prdList = prdList
         } else {
           console.log(res.state.msg)
         }
       }).catch(res => {
-        console.error(res)
+        console.error('link error:' + api.goodsList + ' !')
       })
-      // $.ajax({
-      //   type:'POST',
-      //   url: 'http://122.11.58.232:8003/goods/list',
-      //   headers: {
-      //     'Content-Type': 'application/x-www-form-urlencoded'
-      //   },
-      //   data: {
-      //     game_id: '10000',
-      //     session: 'f6de91a8b790fff28714c',
-      //   },
-      //   success: function (res) {
-      //     console.log(res)
-      //   }
-      // });
 
       // http.getJsonp({
       //   url: api.goodsList,
       //   data: {
       //     game_id: '10000',
-      //     session: 'f6de91a8b790fff28714c',
+      //     session: 'f6de91a8b790fff28714c'
       //   },
-      //   emulateJSON: false,
+      //   emulateJSON: false
       // }).then(res => {
       //   console.log(res)
       // }).catch(res => {

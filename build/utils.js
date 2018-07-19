@@ -1,10 +1,11 @@
-var path = require('path')
-var config = require('../config')
-// var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const config = require('../config')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const px2rem = require('postcss-px2rem');
 
 exports.assetsPath = function (_path) {
-  var assetsSubDirectory = process.env.NODE_ENV === 'production' ?
+  const assetsSubDirectory = process.env.NODE_ENV === 'production' ?
     config.build.assetsSubDirectory :
     config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
@@ -13,7 +14,7 @@ exports.assetsPath = function (_path) {
 exports.cssLoaders = function (options) {
   options = options || {}
 
-  var cssLoader = {
+  const cssLoader = {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
@@ -21,9 +22,16 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      remUnit: process.env.NODE_ENV === 'production' ? config.build.remUnit : config.dev.remUnit, //设计稿宽度/10
+    }
+  };
+
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    var loaders = [cssLoader]
+    var loaders = [cssLoader, px2remLoader]
     if (loader) {
       loaders.push({
         loader: loader + '-loader',

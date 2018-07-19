@@ -25,6 +25,7 @@
 <script>
 import { appBridge } from '@/utils/appBridge'
 import { isApp, isWeixin } from '@/utils/platform'
+import { setHeaderView } from '@/utils/util'
 export default {
   name: 'AppAPi',
   data () {
@@ -71,7 +72,7 @@ export default {
   computed: {},
   created () {
     this.testAgent();
-    this.$parent.header = this.header
+    setHeaderView(this)
   },
   methods: {
     testAgent () {

@@ -26,6 +26,33 @@ const route = [
       title: '盒子--商品详情'
     }
   },
+  // 盒子--文案页面
+  {
+    path: '/message',
+    name: 'message',
+    component: r => require.ensure([], () => r(require('@/page/box/message/index.js')), 'message'),
+    meta: {
+      title: '盒子--商品详情'
+    }
+  },
+  // 盒子--文案页面
+  {
+    path: '/message2',
+    name: 'message2',
+    component: r => require.ensure([], () => r(require('@/page/box/message2/index.js')), 'message2'),
+    meta: {
+      title: '盒子--商品详情'
+    }
+  },
+  // 盒子--文案页面
+  {
+    path: '/message3',
+    name: 'message3',
+    component: r => require.ensure([], () => r(require('@/page/box/message3/index.js')), 'message3'),
+    meta: {
+      title: '盒子--商品详情'
+    }
+  }
 ]
 
 export default route

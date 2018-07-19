@@ -20,6 +20,7 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report,
+    remUnit: 24,
   },
   dev: {
     env: require('./dev.env'),
@@ -37,19 +38,19 @@ module.exports = {
         }
       },
       // 测试地址
-      '/test': {
+      '/dev': {
         target: 'http://122.11.58.232:8003',
         changeOrigin: true,
         pathRewrite: {
-          '^/test': ''
+          '^/dev': ''
         }
       },
       // 生产地址
-      '/ngc': {
-        target: 'https://ngc.ztgame.com/',
+      '/pro': {
+        target: 'https://ngc.ztgame.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/ngc': ''
+          '^/pro': ''
         }
       }
     },
@@ -58,6 +59,7 @@ module.exports = {
     // (https://github.com/webpack/css-loader#sourcemaps)
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
-    cssSourceMap: false
+    cssSourceMap: false,
+    remUnit: 24,
   }
 }

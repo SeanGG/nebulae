@@ -43,9 +43,10 @@
 .fr {
   float: right;
 }
+
 .clearfix:after {
-  content:'';
-  clear:both;
+  content: '';
+  clear: both;
   display: table;
 }
 
@@ -74,15 +75,17 @@
 
 #app {
   overflow: hidden;
+  height: 100%;
 }
 
-body,html {
+body,
+html {
   background: #f6f6f6;
+  height: 100%;
 }
-
 
 header {
-  margin: 15px 35px;
+  margin: 30px 70px;
   background: url(../images/app_experience/login.png);
   background-size: auto 100%;
   background-position: right center;
@@ -91,20 +94,30 @@ header {
     // margin: 20px 20px 0;
   }
   .title {
-    font-size: 30px;
+    font-size: 60px;
+    height: 60px;
     color: #000;
   }
   .description {
-    font-size: 14px; // margin: 5px 20px 20px;
-    margin: 10px 0 0;
+    font-size: 28px; // margin: 5px 20px 20px;
+    height: 28px;
+    margin: 20px 0 0;
   }
 }
 
-
 main {
-  margin: 0 15px 15px;
+  margin: 0 30px 30px;
   background-color: #fff;
-  font-size: 16px;
-  overflow: hidden;
-  padding:0 0 15px;
+  font-size: 32px;
+  overflow: auto;
+  padding: 0 0 30px;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  &.flow {
+    height: calc(100% - 168px);
+  }
 }

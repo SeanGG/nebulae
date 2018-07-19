@@ -98,3 +98,39 @@ export const getAge = (range, type) => { // range 时间, type:max（最大年�
 export const handleAnchor = (el) => {
   el.scrollIntoView(true)
 }
+
+// 设置页面头部显示隐藏&高度
+export const setHeaderView = (vue) => {
+  const {
+    header,
+    $parent
+  } = vue
+  let parentHeader = $parent.header
+  parentHeader.status = true
+  parentHeader = Object.assign({}, parentHeader, header)
+  vue.$parent.header = parentHeader
+
+  // document.getElementsByClassName('content')[0].style.height = 'calc("100%" - ' + headerHeight + 'px)'
+  setTimeout(() => {
+    const headerNode = document.querySelector('header')
+
+    let headerHeight = getStyle(headerNode, 'height')
+    const headermarginTop = getStyle(headerNode, 'marginTop')
+    const headermarginBottom = getStyle(headerNode, 'marginBottom')
+    headerHeight = parseInt(headerHeight) + parseInt(headermarginTop) + parseInt(headermarginBottom)
+
+    headerHeight = parentHeader.status ? headerHeight : 0
+    const wh = window.innerHeight
+    const ch = parseInt(wh) - parseInt(headerHeight) + 'px'
+    document.getElementsByClassName('content')[0].style.height = ch
+  }, 0)
+}
+
+// 获取dom样式
+export const getStyle = function (obj, attr) {
+  if (obj.currentStyle) {
+    return obj.currentStyle[attr]
+  } else {
+    return document.defaultView.getComputedStyle(obj, null)[attr].replace('px', '')
+  }
+}

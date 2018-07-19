@@ -24,7 +24,7 @@
 <script>
 import * as http from '@/utils/http'
 import * as api from '@/api/'
-import { setInitParams } from '@/utils/util'
+import { setInitParams, setHeaderView } from '@/utils/util'
 export default {
   name: 'Turntable',
   data () {
@@ -63,7 +63,7 @@ export default {
     }
   },
   created () {
-    this.$parent.header = this.header
+    setHeaderView(this)
   },
   methods: {
     startGame () {

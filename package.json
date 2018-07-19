@@ -80,6 +80,7 @@
     "ora": "^1.2.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-px2rem": "^0.3.0",
+    "px2rem-loader": "^0.1.9",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.6",
     "selenium-server": "^3.0.1",

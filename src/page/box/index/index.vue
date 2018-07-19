@@ -22,7 +22,7 @@
 <script>
 import * as http from '@/utils/http'
 import * as api from '@/api/'
-// import { setInitParams } from '@/utils/util'
+import { setHeaderView } from '@/utils/util'
 
 export default {
   name: 'BoxIndex',
@@ -47,6 +47,21 @@ export default {
               key: 'prd',
               desc: '商城商品详情页'
             },
+            {
+              name: '文案页面1',
+              key: 'message',
+              desc: '盒子文案页面1'
+            },
+            // {
+            //   name: '文案页面2',
+            //   key: 'message2',
+            //   desc: '盒子文案页面2'
+            // },
+            // {
+            //   name: '文案页面3',
+            //   key: 'message3',
+            //   desc: '盒子文案页面3'
+            // }
           ]
         }
       ]
@@ -55,7 +70,7 @@ export default {
   computed: {
   },
   created () {
-    this.$parent.header = this.header
+    setHeaderView(this)
   },
   methods: {
     goPage (e) {
